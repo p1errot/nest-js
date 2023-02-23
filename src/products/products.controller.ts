@@ -14,34 +14,34 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
-  addProduct(
+  async addProduct(
     @Body() data: { title: string; description: string; price: number },
-  ): { id: string } {
-    const id = this.productsService.insert(data);
+  ) {
+    const id = await this.productsService.insertOne(data);
 
     return { id };
   }
 
   @Get()
-  getAll() {
-    return { products: this.productsService.getAll() };
+  async getAll() {
+    return { products: await this.productsService.getAll() };
   }
 
   @Get(':id')
-  getOne(@Param('id') id: string) {
-    return { product: this.productsService.getOne(id) };
+  async getOne(@Param('id') id: string) {
+    return { product: await this.productsService.getOne(id) };
   }
 
   @Patch(':id')
-  updateProduct(
+  async updateProduct(
     @Param('id') id: string,
     @Body() product: { title?: string; description?: string; price?: number },
   ) {
-    this.productsService.update(id, product);
+    await this.productsService.update(id, product);
   }
 
   @Delete(':id')
-  removeProduct(@Param('id') id: string) {
-    this.productsService.deleteProduct(id);
+  async removeProduct(@Param('id') id: string) {
+    await this.productsService.deleteProduct(id);
   }
 }
