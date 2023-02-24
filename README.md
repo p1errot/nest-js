@@ -58,6 +58,16 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
+## Swagger
+Find the api definition in swagger after running the app [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
+
+## Documentation
+* [NestJS OpenAPI (Swagger Module)](https://docs.nestjs.com/openapi/introduction)
+* [Nest folder structure](https://github.com/CatsMiaow/nestjs-project-structure)
+* [NestJS RealWorld example app](https://github.com/lujakob/nestjs-realworld-example-app)
+* [Awesome NestJS](https://github.com/nestjs/awesome-nestjs)
+
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
